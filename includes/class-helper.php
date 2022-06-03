@@ -11,6 +11,6 @@ class Helper {
 	 * Constructor.
 	 */
 	public static function say_hello() {
-		echo esc_html__( 'Hello', 'wh-plugin' );
+		echo esc_html__( 'Hello no composer', 'wh-plugin' );
 	}
 }
