@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Autoload test no composer
+ * Plugin Name: Autoload no composer
  * Plugin URI: https://mywebsite.com
  * Description: Empty.
  * Author: Ernest Beginov
@@ -8,19 +8,8 @@
  * Author URI: https://mywebsite.com
  */
 
-/**
- * Autoloader.
- *
- * @param $class
- *
- * @return void
- */
-function wh_custom_autoloader( $class ) {
-	echo($class) . '<br>';
-	include 'lib/' . $class . '.php';
-}
+defined( 'ABSPATH' ) || exit;
 
+require_once plugin_dir_path( __FILE__ ) . 'class-autoload.php';
 
-spl_autoload_register( 'wh_custom_autoloader' );
-
-//new Plugin\Includes\Some_Test();
+WHPlugin\Includes\Plugin::get_instance();
